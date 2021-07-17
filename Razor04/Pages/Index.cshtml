@@ -1,0 +1,28 @@
+﻿@page
+
+@{ 
+    ViewData["Title"] = "Razor syntax tutorial";
+
+    var Name = "nCov"; 
+
+    string SayHello(string name) => $"Hello in code block, {name}"; 
+
+    var countries = new[] { "USA", "Russia", "France", "GB" }; 
+
+    void RenderName(string name)
+    { 
+        <p>Name: <strong>@name</strong></p>
+    }
+}
+<h1>@SayHello(Name)</h1>
+
+@Name
+<p>Razor is a markup syntax for embedding server-based code into webpages. The Razor syntax consists of Razor markup, C#, and HTML.</p>
+
+
+<ul>
+    @foreach (var c in countries)
+    {
+        <li>@c</li>
+    }
+</ul>

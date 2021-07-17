@@ -1,0 +1,34 @@
+﻿@page
+
+@{ 
+    void SayHello(string name)
+    {
+        <p class="block">Hello, @name! I'm in the code block</p>
+    }
+}
+
+@functions {
+    void SayHello(string name)
+    {
+        <p class="function">Hello, @name! I'm in the functions block.</p>
+    }
+}
+
+<style>
+    .block {
+        color: dodgerblue;
+    }
+
+    .function {
+        color: yellowgreen;
+    }
+
+    .class {
+        color: blueviolet;
+    }
+</style>
+
+
+
+@{ SayHello("Covid");}
+@{this.SayHello("Covid");}

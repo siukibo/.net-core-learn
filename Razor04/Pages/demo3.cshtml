@@ -1,0 +1,20 @@
+﻿@page
+@{
+    void SayHello(string name)
+    {
+        <p>
+            <strong style="color:royalblue;">Hello, @name!</strong><br />
+            <span>Welcome to Razor tutorial!</span>
+        </p>
+    }
+
+    SayHello("H1N1");
+
+    <div style="background: #b6ff00;">@{SayHello("Covid"); }</div>
+
+    
+}
+
+<div style="background: #ffd800;">
+    @{ SayHello("Sars"); }
+</div>

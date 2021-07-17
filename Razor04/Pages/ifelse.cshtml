@@ -1,0 +1,19 @@
+﻿@page
+<p>@DateTime.Today</p>
+@if (DateTime.Today.DayOfWeek == DayOfWeek.Monday)
+{
+    var today = DateTime.Today;
+    if (today.Day == 1)
+    {
+        <i>Hôm nay là ngày đầu tháng</i>
+    }
+    <strong>Chúc bạn một tuần làm việc mới hiệu quả</strong>
+}
+else if (DateTime.Now.DayOfWeek == DayOfWeek.Friday)
+{
+    <strong>Chúc bạn ngày cuối tuần vui vẻ</strong>
+}
+else
+{
+    <strong>Chúc bạn một ngày làm việc hiệu quả</strong>
+}

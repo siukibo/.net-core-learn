@@ -1,0 +1,13 @@
+﻿@page
+@model ViewDatasModel
+@{
+    // phải cast kiểu object sang kiểu cụ thể
+    var book = (Book)ViewData["MyObject"];
+}
+
+<h2>@ViewData["MyString"]</h2>
+<p>The answer to everything is @ViewData["MyNumber"]</p>
+
+<h2>@book.Title</h2>
+<p>@book.Author</p>
+<p>@book.Publisher</p>
