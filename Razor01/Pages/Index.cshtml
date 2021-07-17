@@ -1,0 +1,46 @@
+﻿@page
+@{
+    Layout = null;
+    ViewData["Title"] = "About";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] </title>
+    <style>
+        .header {
+            color: cadetblue;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="header">Razor Pages tutorial</h1>
+    <hr />
+
+    <h2>@SayHello("Covid")</h2>
+    <p>It's @DateTime.Now.ToLongDateString()</p>
+
+    <p>
+        I found out I might have cancer. I have a tumor the size of banana slice in my thyroid. It has been driving me nuts because cancer killed my mother. I need a distraction and can't decide on a book.
+
+    </p>
+
+    <hr />
+    <h2 class="footer"> @DateTime.Now.Year</h2>
+</body>
+</html>
+
+@{
+    string SayHello(string name)
+    {
+        return $"Hello, {name}. Welcome to Razor Pages!";
+    }
+}
