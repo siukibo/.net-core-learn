@@ -1,0 +1,95 @@
+﻿@page
+@model Razor07_form.Pages.formModel
+@{
+    ViewData["Title"] = "PHIẾU ĐIỀU TRA";
+}
+
+
+<h1 style="text-align:center; color:green">
+    @ViewData["Title"]
+</h1>
+<h3 style="text-align:center; color:red" id="baoloi"></h3>
+@if (Request.Method.ToUpper() == "GET")
+{<form name="f1" id="f1" action="" method="post">
+        <table width="500" border="1" cellpadding="5" align="center">
+            <tr>
+                <td width="20%">HỌ TÊN:</td>
+                <td width="80%">
+                    <input type="text" name="hoten" id="hoten" placeholder="họ và tên">
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">EMAIL:</td>
+                <td width="80%">
+                    <input type="text" name="email" id="email" placeholder="abc@tenmien.com">
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">Sở thích:</td>
+                <td width="80%">
+                    <label for="c1">Đọc sách</label>
+                    <input type="checkbox" name="ck" id="c1" value="Đọc sách">
+                    <label for="c2">Nghe nhạc</label>
+                    <input type="checkbox" name="ck" id="c2" value="Nghe nhạc">
+                    <label for="c3">Chơi Game</label>
+                    <input type="checkbox" name="ck" id="c3" value="Chơi game">
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">Ngành học:</td>
+                <td width="80%">
+                    <label for="r1">CNTT</label>
+                    <input type="radio" name="r1" id="r1" value="Công nghệ thông tin">
+                    <label for="r2">Ngoại ngữ</label>
+                    <input type="radio" name="r1" id="r2" value="Ngoại ngữ">
+                    <label for="r3">Kinh tế</label>
+                    <input type="radio" name="r1" id="r3" value="Kinh tế">
+                </td>
+            </tr>
+
+            <tr>
+                <td width="20%">Giới tính:</td>
+                <td width="80%">
+                    <label for="r4">Nam</label>
+                    <input type="radio" name="r2" id="r4" value="Nam" checked>
+                    <label for="r5">Nữ</label>
+                    <input type="radio" name="r2" id="r5" value="Nữ">
+                </td>
+            </tr>
+
+            <tr>
+                <td width="20%">Quê quán:</td>
+                <td width="80%">
+                    <select name="quequan" id="quequan" size="1">
+                        <option value=""> Chọn quê quán</option>
+                        <option value="04"> Hà nội </option>
+                        <option value="08"> TP. Hồ Chí Minh</option>
+                        <option value="034"> Hải Dương </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" name="b1" id="b1" value="Gửi đi">
+                    &nbsp;&nbsp;
+                    <input type="reset" name="b2" id="b2" value="Nhập lại">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+}
+else if (Request.Method.ToUpper() == "POST")
+{
+    <p>@Model.Hoten</p>
+    <p>@Model.Email</p>
+    <p>@Model.Nganhhoc</p>
+
+    @foreach (var sothich in Model.Sothich)
+    {
+        <p>@sothich</p>
+    }
+    <p>@Model.Gioitinh</p>
+    <p>@Model.Quequan</p>
+}
+

@@ -1,0 +1,10 @@
+﻿@page
+@model Razor06.Pages.HandlerModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h3>@Model.Message</h3>
+<form method="post">
+    <input type="text" name="textbox1" />
+    <p><button class="btn btn-primary" type="submit">Send Post Request</button></p>
+</form>
+<p><a href="/" class="btn btn-primary">Send GET request</a></p>
